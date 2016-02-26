@@ -97,8 +97,6 @@
 }
 - (IBAction)alert:(id)sender {
     
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"我是一条提示" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//    [alert show];
 
     CGRect bounds = [UIScreen mainScreen].bounds;
         NSLog(@"width:%f",bounds.size.width);
