@@ -44,11 +44,28 @@
     [self.navigationController.view addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
     
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
 
+}
+
+-(void)didEnterBackground:(NSNotification*)sender{
+    if (self.isCurrentLand) {
+        [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait];
+    }
+}
+
+-(void)enterForeground:(NSNotification*)sender{
+//    if (self.isCurrentLand) {
+//        self.isLand = YES;
+//    }
 }
 
 -(void)tapped:(UIGestureRecognizer*)gesture{
     NSLog(@"tapped");
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)doubleTapped:(UIGestureRecognizer*)gesture{
@@ -91,10 +108,7 @@
 }
 
 
--(BOOL)shouldAutorotate{
 
-    return NO;
-}
 - (IBAction)alert:(id)sender {
     
 
@@ -129,8 +143,13 @@
     Test2ViewController1 *vc = [Test2ViewController1 test2ViewController1];
     [self.navigationController pushViewController:vc animated:YES];
 }
-
--(NSUInteger)supportedInterfaceOrientations{
+//
+-(BOOL)shouldAutorotate{
+    
+    return YES;
+}
+//
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations{
     
     if (self.isLand) {
         return UIInterfaceOrientationMaskLandscape;
@@ -162,7 +181,11 @@
     
     
     if (isLand) {
+         [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight];
+        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationPortrait] forKey:@"orientation"];//这句话是防止手动先把设备置为横屏,导致下面的语句失效.
+        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeRight] forKey:@"orientation"];
         
+        /*
 //        NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight];
 //        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
      
@@ -173,16 +196,38 @@
         self.navigationController.view.transform = CGAffineTransformMakeRotation(M_PI_2);
         self.navigationController.view.bounds = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
         //self.navigationController.view.frame =  CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-
+*/
     }else{
+      
+        [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait];
+        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeRight] forKey:@"orientation"];//这句话是防止手动先把设备置为竖屏,导致下面的语句失效.
+        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationPortrait] forKey:@"orientation"];
+        /*
         [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait];
         self.navigationController.view.transform = CGAffineTransformMakeRotation(0);
         self.navigationController.view.bounds = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
         //self.navigationController.view.frame =  CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+         */
     }
     
     [UIView commitAnimations];
+    
+    if (isLand) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setTitle:@"dasda" forState:UIControlStateNormal];
+        button.backgroundColor = [UIColor redColor];
+        button.frame = CGRectMake(self.view.frame.size.width-50, 100, 50, 50);
+        [button addTarget:self action:@selector(btnTap:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+    }
+    
+
 }
+
+-(void)btnTap:(UIButton*)sender{
+    NSLog(@"btnTap");
+}
+
 
 /*
 #pragma mark - Navigation

@@ -21,6 +21,16 @@
     return YES;
 }
 
+//-(UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+//    if (_allowRotation == 1) {
+//        return UIInterfaceOrientationMaskLandscapeRight;
+//    }
+//    else
+//    {
+//        return (UIInterfaceOrientationMaskPortrait);
+//    }
+//}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -16,6 +16,8 @@
 		07D08DFA1BA919150027E0C1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D08DF81BA919150027E0C1 /* LaunchScreen.xib */; };
 		07D08E061BA919150027E0C1 /* zjs_OrientationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D08E051BA919150027E0C1 /* zjs_OrientationTests.m */; };
 		07D08E111BA91A560027E0C1 /* Test1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D08E101BA91A560027E0C1 /* Test1ViewController.m */; };
+		07DEE3BF1CB3B582005FA896 /* Test3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DEE3BE1CB3B582005FA896 /* Test3ViewController.m */; };
+		07DEE3C21CB3B6AD005FA896 /* UIViewController+Ex.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DEE3C11CB3B6AD005FA896 /* UIViewController+Ex.m */; };
 		07FA469A1BDF567F0035F50D /* Test2ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FA46991BDF567F0035F50D /* Test2ViewController1.m */; };
 		07FA469D1BDF56A20035F50D /* Test2ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FA469C1BDF56A20035F50D /* Test2ViewController2.m */; };
 		07FA469F1BDF582B0035F50D /* Test2ViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FA469E1BDF582B0035F50D /* Test2ViewController1.xib */; };
@@ -52,6 +54,10 @@
 		07D08E051BA919150027E0C1 /* zjs_OrientationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zjs_OrientationTests.m; sourceTree = "<group>"; };
 		07D08E0F1BA91A560027E0C1 /* Test1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test1ViewController.h; sourceTree = "<group>"; };
 		07D08E101BA91A560027E0C1 /* Test1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test1ViewController.m; sourceTree = "<group>"; };
+		07DEE3BD1CB3B582005FA896 /* Test3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test3ViewController.h; sourceTree = "<group>"; };
+		07DEE3BE1CB3B582005FA896 /* Test3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test3ViewController.m; sourceTree = "<group>"; };
+		07DEE3C01CB3B6AD005FA896 /* UIViewController+Ex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Ex.h"; sourceTree = "<group>"; };
+		07DEE3C11CB3B6AD005FA896 /* UIViewController+Ex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Ex.m"; sourceTree = "<group>"; };
 		07FA46981BDF567F0035F50D /* Test2ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test2ViewController1.h; sourceTree = "<group>"; };
 		07FA46991BDF567F0035F50D /* Test2ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test2ViewController1.m; sourceTree = "<group>"; };
 		07FA469B1BDF56A20035F50D /* Test2ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test2ViewController2.h; sourceTree = "<group>"; };
@@ -102,6 +108,8 @@
 		07D08DE81BA919150027E0C1 /* zjs_Orientation */ = {
 			isa = PBXGroup;
 			children = (
+				07DEE3C01CB3B6AD005FA896 /* UIViewController+Ex.h */,
+				07DEE3C11CB3B6AD005FA896 /* UIViewController+Ex.m */,
 				07FA46971BDF56390035F50D /* Test2 */,
 				07D08DED1BA919150027E0C1 /* AppDelegate.h */,
 				07D08DEE1BA919150027E0C1 /* AppDelegate.m */,
@@ -115,6 +123,8 @@
 				07D08E101BA91A560027E0C1 /* Test1ViewController.m */,
 				075D0DA21BAC278700A55EA0 /* CustomNavigationController.h */,
 				075D0DA31BAC278700A55EA0 /* CustomNavigationController.m */,
+				07DEE3BD1CB3B582005FA896 /* Test3ViewController.h */,
+				07DEE3BE1CB3B582005FA896 /* Test3ViewController.m */,
 			);
 			path = zjs_Orientation;
 			sourceTree = "<group>";
@@ -271,7 +281,9 @@
 				07D08DEF1BA919150027E0C1 /* AppDelegate.m in Sources */,
 				07FA46A51BDF696F0035F50D /* Test2ViewController3.m in Sources */,
 				075D0DA41BAC278700A55EA0 /* CustomNavigationController.m in Sources */,
+				07DEE3BF1CB3B582005FA896 /* Test3ViewController.m in Sources */,
 				07D08DEC1BA919150027E0C1 /* main.m in Sources */,
+				07DEE3C21CB3B6AD005FA896 /* UIViewController+Ex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
